@@ -10,15 +10,15 @@ define('WPLANG', '<language tag>');
 
 Copy:
 
-excel-like-price-change-for-woocommerce-and-wp-e-commerce-light.pot
+excel-like-price-change.pot
 
 to:
 
 
-wp-content/languages/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-<language tag>.po
+wp-content/languages/excel-like-price-change-for-woocommerce-and-wp-e-commerce-light/excel-like-price-change-<language tag>.po
 
 use poedit applciation to create
 
-wp-content/languages/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-<language tag>.mo
+wp-content/languages/excel-like-price-change-for-woocommerce-and-wp-e-commerce-light/excel-like-price-change--<language tag>.mo
 
 

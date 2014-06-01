@@ -29,9 +29,11 @@ if(isset($_REQUEST['keep_alive'])){
 
 
 $wooc_fields_visible = array();
-foreach(explode(",",$plem_settings['wooc_fileds']) as $I => $val){
-    if($val)
-		$wooc_fields_visible[$val] = true;
+if(isset($plem_settings['wooc_fileds'])){
+	foreach(explode(",",$plem_settings['wooc_fileds']) as $I => $val){
+		if($val)
+			$wooc_fields_visible[$val] = true;
+	}
 }
 
 function fn_show_filed($name){
@@ -2492,7 +2494,7 @@ jQuery(document).ready(function(){
 		jQuery(window).trigger('resize');
 	});
 	
-	//jQuery('.filter_option *[name="product_manufacturer"]').val("<?php echo $product_manufacturer;?>");
+	
 	if('<?php echo $product_category;?>') jQuery('.filter_option *[name="product_category"]').val("<?php if($product_category)echo implode(",",$product_category);?>".split(','));
 	if('<?php echo $product_tag;?>') jQuery('.filter_option *[name="product_tag"]').val("<?php if($product_tag) echo implode(",",$product_tag);?>".split(','));
 	if('<?php echo $product_shipingclass;?>') jQuery('.filter_option *[name="product_shipingclass"]').val("<?php if($product_shipingclass) echo implode(",",$product_shipingclass);?>".split(','));
@@ -2509,7 +2511,7 @@ jQuery(document).ready(function(){
 	} ?>
 	
 	
-	//jQuery('.filter_option *[name="product_show"]').val(<?php echo $product_show;?>);
+	
 	jQuery('SELECT[name="product_category"]').chosen();
 	jQuery('SELECT[name="product_status"]').chosen();
 	jQuery('SELECT[name="product_tag"]').chosen();

@@ -31,9 +31,11 @@ $use_image_picker    = false;
 $use_content_editior = false;
 
 $wpsc_fields_visible = array();
-foreach(explode(",",$plem_settings['wpsc_fileds']) as $I => $val){
-    if($val)
-		$wpsc_fields_visible[$val] = true;
+if(isset($plem_settings['wpsc_fileds'])){
+	foreach(explode(",",$plem_settings['wpsc_fileds']) as $I => $val){
+		if($val)
+			$wpsc_fields_visible[$val] = true;
+	}
 }
 
 function fn_show_filed($name){

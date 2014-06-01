@@ -228,13 +228,9 @@ if ( ! class_exists( 'excellikepricechangeforwoocommerceandwpecommercelight' ) )
 		
 		public function load_plugin_textdomain() {
 			$locale = apply_filters( 'plugin_locale', get_locale(), 'excellikepricechangeforwoocommerceandwpecommercelight' );
-			load_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', WP_LANG_DIR . "/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-$locale.mo" );
-			// Load admin specific MO files
-			if ( is_admin() ) {
-				load_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', WP_LANG_DIR . "/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-admin-$locale.mo" );
-				load_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', $this->plugin_path() . "/languages/excellikepricechangeforwoocommerceandwpecommercelight-admin-$locale.mo" );
-			}
-			load_plugin_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', false, dirname( plugin_basename( __FILE__ ) ) . "/languages" );
+			load_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', WP_LANG_DIR . "/excel-like-price-change-for-woocommerce-and-wp-e-commerce-light/excel-like-price-change-$locale.mo" );
+			load_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', $this->plugin_path() . "/languages/excel-like-price-change-$locale.mo" );
+		    load_plugin_textdomain( 'excellikepricechangeforwoocommerceandwpecommercelight', false, dirname( plugin_basename( __FILE__ ) ) . "/languages" );
 		}
 		
 		public function internal_display(){
