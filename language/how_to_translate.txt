@@ -1,0 +1,24 @@
+Make sure in /wp-config.php 
+
+define('WPLANG', '');
+
+in not like this. Language tag should be set, like:
+
+define('WPLANG', '<language tag>');
+
+<language tag> is foe example en_GB, de_DE, fr_FR, zn_CN ...
+
+Copy:
+
+excel-like-price-change-for-woocommerce-and-wp-e-commerce-light.pot
+
+to:
+
+
+wp-content/languages/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-<language tag>.po
+
+use poedit applciation to create
+
+wp-content/languages/excellikepricechangeforwoocommerceandwpecommercelight/excellikepricechangeforwoocommerceandwpecommercelight-<language tag>.mo
+
+

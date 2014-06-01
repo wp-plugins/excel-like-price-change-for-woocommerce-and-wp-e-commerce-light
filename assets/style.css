@@ -1,0 +1,539 @@
+*{
+font-family: sans-serif;
+font-size:10pt;
+margin:0;
+padding:0;
+outline-color: transparent;
+outline-width: 0;
+outline-style: none;
+}
+
+SELECT, .chosen-choices{
+ border:none!important;
+}
+
+BODY{
+    overflow:hidden;
+}
+
+BODY > DIV.header *{
+	color:white;
+}
+
+input{
+	color:#666;
+}
+
+body{
+	
+}
+
+a{
+	text-decoration:none;
+}
+
+BODY > DIV.header{
+	background-color:#505050;
+	padding:0px 5px 0px 5px;
+	height:50px;
+	overflow:hidden;
+}
+
+BODY > DIV.header UL.menu{
+    width:100%;
+}
+
+BODY > DIV.header UL.menu TABLE{
+	margin-top:5px;
+}
+
+BODY > DIV.header UL.menu TABLE TD{
+    font-size:9px;
+	text-align:center;
+	vertical-align:top;
+}
+
+BODY > DIV.header UL.menu TABLE TD *{
+	font-size:10px;
+	color:gray;
+	padding:1px;
+}
+
+BODY > DIV.content{
+	margin-top:-1px;
+}
+
+BODY > DIV.header a.cmdBackToJoomla{
+	background:url(images/left.png) no-repeat;
+	padding:1px 8px 5px 26px;
+	border-right:1px solid white;
+	margin-top: 15px;
+	float:left;
+	height:18px;
+}
+
+DIV.filter_panel{
+	background-color: #9b4f96;
+	position:absolute;
+	right:0;
+	width:280px;
+	z-index:100;
+	color:white;
+	overflow:auto;
+}
+
+span.filters_label > span.toggler{
+    display:block;
+	font-size:10px;
+	padding-top:28px;
+    background-image:url(images/htoggle.png);
+	background-repeat:no-repeat;
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom:0px;
+	width: 27px;
+	word-wrap: break-word;
+	background-color: rgba(0,0,0,0.1);
+	font-family: cursive;
+	cursor:pointer;
+	
+}
+
+.filter_panel.opened span.filters_label > span.toggler{
+	background-position:-25px 2px;
+}
+
+.filter_panel.closed span.filters_label > span.toggler{
+	background-position:2px 2px;
+}
+
+span.filters_label > span.toggler > span{
+	width: 5px;
+	display: block;
+	margin-left: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+DIV.footer{
+    background-color: #505050;
+	position: absolute;
+	bottom: 0;
+	height: 25px;
+	width: 100%;
+	color:white;
+}
+
+.filter_panel.opened{
+    right:0;
+}
+
+.filter_panel.closed{
+    right:-253px;
+}
+
+DIV.filter_holder{
+	margin-left:30px;
+}
+
+DIV.filter_holder DIV.filter_option{
+    margin: 5px 15px 0 15px;
+}
+
+DIV.filter_holder DIV.filter_option label{
+    display:block;
+	padding:1px;
+	font-size:12px;
+}
+
+DIV.filter_holder DIV.filter_option input,
+DIV.filter_holder DIV.filter_option select{
+    width:100%;
+	padding:1px;
+}
+
+DIV.filter_holder DIV.filter_option .cmd{
+	background-color: #505050;
+	padding:6px;
+	color:white;
+	border:none;
+	cursor:pointer;
+}
+
+DIV.filter_holder DIV.filter_option .cmd:hover{
+	background-color: #00bcF2;
+}
+
+DIV.filter_holder .chosen-container{
+   background-color: white;
+}
+
+DIV.filter_holder .chosen-container *{
+	color:#666;
+}
+
+DIV.filter_holder .chosen-container  LI.search-field > INPUT{
+	height: 26px!important;
+	text-indent: 5px;
+	
+}
+
+DIV.filter_holder .filter_option > INPUT{
+	height: 27px!important;
+	border:none;
+	text-indent: 5px;
+}
+
+DIV.filter_holder li.search-choice{
+	border-radius:0!important;
+	background:#9b4f96!important;
+	border:none!important;
+	padding: 7px 20px 7px 5px!important;
+	margin: 1px 0 1px 1px!important;
+}
+
+DIV.filter_holder li.search-choice *{
+	color:white!important;
+	border:none!important;
+}
+
+DIV.filter_holder .chosen-container-multi .chosen-choices li.search-choice .search-choice-close{
+	top: 9px;
+}
+
+.note{
+	font-size:9px;
+	padding-left:3px;
+	padding-right:3px;
+}
+
+.htCustomSelectEditor {
+  padding:0;
+  position:absolute;
+  /*
+  * This hack enables to change <select> dimensions in WebKit browsers
+  */
+  -webkit-appearance: menulist-button !important;
+}
+
+.hst_dg_view .chosen-container, .hst_dg_view .chosen-container > *{
+  border-radius: 0!important;
+  margin: 0!important;
+}
+
+.hst_dg_view  .chosen-container  LI.search-field > INPUT{
+	height: 24px!important;
+	margin:0!important;
+	padding:0!important;
+}
+
+.hst_dg_view  .chosen-container li.search-choice{
+	margin-left: 1px;
+	margin-right: 0px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	
+	border-radius: 0;
+}
+
+.hst_dg_view  .chosen-container li.search-choice *{
+	font-size:10px;
+}
+
+.hst_dg_view tbody TD, .hst_dg_view .chosen-results LI{
+	font-size:12px;
+}
+
+.htCore tbody TR:hover TD{
+ background:#D9D9D9;
+}
+
+.pagination{
+ float:left;
+ margin-top:2px;
+}
+
+.pagination *{
+ font-size:10px;
+}
+
+.pagination  > *{
+  display:block;
+  float:left;
+}
+
+.pagination label{
+  margin-top:2px;
+  padding:1px 5px;
+}
+
+.pagination .page_number {
+  background:#9b4f96;
+  min-width:18px;
+  text-align:center;
+  margin-left:8px;
+  margin-top:3px;
+  cursor:pointer;
+}
+
+.pagination #txtlimit{
+  margin-top:1px;
+}
+
+.pagination .page_number.active {
+  background:#00bcF2;
+}
+
+.pageination_info{
+  margin:2px;
+  margin-left:10px;
+}
+
+.htDimmed .htAutocompleteArrow{
+  display:none;
+}
+
+UL.menu{
+  list-style:none;
+  float:left;
+}
+
+UL.menu LI > span{
+  display: block;
+  cursor:pointer;
+}
+
+UL.menu LI > span > *{
+  padding: 17px 16px;
+  display: block;
+  text-align:left;
+}
+
+UL.menu > LI{
+  float:left;
+}
+
+UL.menu button{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+}
+
+UL.menu UL{
+  margin-top:-1px;
+  display:none;
+}
+
+UL.menu UL{
+  position:absolute;
+  width:220px;
+  background:#505050;
+  list-style:none;
+}
+
+UL.menu LI:hover{
+  background:#606060;
+}
+
+UL.menu LI:hover > UL{
+  display:block;
+  z-index:1000;
+}
+
+.undo{
+	background-image:url(images/undo.png);
+	background-repeat:no-repeat;
+	background-position: left center;
+	padding-left:20px;
+}
+
+.redo{
+	background-image:url(images/redo.png);
+	background-repeat:no-repeat;
+	background-position: left center;
+	padding-left:20px;
+}
+
+.wait{
+	background-image:url(images/wait.gif);
+	background-repeat:no-repeat;
+	background-position: left center;
+	width:41px;
+	height:11px;
+	display:block;
+}
+
+.save_in_progress{
+	display:none;
+	float: left;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+
+#cmdRefresh{
+	margin-top:12px;
+}
+
+#txtMassUpdate{
+	color: #666666;
+	padding: 5px;
+	border: navajowhite;
+	margin-bottom:12px;
+}
+
+#cmdMassUpdate,#cmdMassUpdateOverride{
+    min-width:200px;	
+	margin-top:3px;
+	text-align:left;
+}
+
+
+
+.import_form{
+	background-color: #505050;
+	position:fixed;
+	right:0;
+	bottom:0;
+	top:0;
+	left:0;
+	z-index:9999999;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.import_form button, .import_form input{
+	background-color: #9b4f96;
+	padding:10px;
+	margin:10px;
+	color:white;
+	border:none;
+	cursor:pointer;
+}
+
+.import_form span,
+.import_form label{
+    color:white;
+}
+
+.import_form button:hover, .import_form input:hover{
+	background-color: #00bcF2
+}
+
+.create-option > a{
+	color:silver!important;
+	font-size:9px;
+	font-style: italic;
+}
+
+.filter_panel .chosen-choices{
+	width:205px;
+	max-width:205px;
+}
+
+.filter_panel .chosen-container-multi .chosen-choices li.search-field input{
+	padding:0;
+}
+
+.htCore .notranslate td{
+	white-space:nowrap; 
+	overflow:hidden;
+	text-overflow:ellipsis; 
+}
+
+.handsontable .htAutocompleteArrow {
+	position: relative;
+	z-index: 9;
+}
+
+a#editor_fullscreen{
+	display:none;
+}
+
+#content-editor{
+	z-index:9999999999999;
+	position:fixed; 
+	top:110%; 
+	left:0%; 
+	right:0%;
+	bottom:0;
+	background:rgba(0,0,0,0.8);
+}
+
+#content-editor > DIV{
+	background:#505050;
+	padding:10px;
+	width: 75%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+DIV.cmds-editor{
+	clear:both;
+}
+
+DIV.cmds-editor > *{
+	float:right;
+}
+
+.metro-button{
+	background:#9b4f96; 
+	border:none; 
+	margin:5px;
+	margin-top:15px;
+	padding:12px 26px;
+	font-size:16px;
+	color:white;
+	cursor:pointer;
+	display:block;
+	float:right;
+}
+
+.metro-button:hover{
+	background-color: #00bcF2;
+}
+
+.htCore tbody  TD.currentRow, .htCore tbody  TD.currentCol{
+	background: #FFF7E2;
+}
+
+BODY#media-upload{
+	overflow: scroll!important;
+}
+
+BODY#media-upload #tab-type_url, 
+BODY#media-upload #tab-gallery{
+	display:none!important;
+}
+
+.savesend .button{
+	display:none!important;
+}
+
+.handsontableInputHolder{
+	z-index:200;
+}
+
+::-webkit-scrollbar {  
+    width: 12px;  
+}  
+::-webkit-scrollbar-track {  
+    background-color: #eaeaea;  
+    border-left: 1px solid #ccc;  
+}  
+::-webkit-scrollbar-thumb {  
+    background-color: #ccc;  
+}  
+::-webkit-scrollbar-thumb:hover {  
+    background-color: #aaa;  
+}  
+
+.handsontable .htDimmed{
+	color:#555;
+	font-style: italic;
+}
+
+
+
+
