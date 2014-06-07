@@ -2345,7 +2345,7 @@ jQuery(document).ready(function(){
         editor: customImageEditor.prototype.extend(),
 		renderer: customImageRenderer
 	  }<?php } ?>
-	  <?php if(fn_show_filed('backorders')){ ?>,{ data: "backorders" , type: "dropdown",  source: ["yes","notify","no"]}<?php } ?>
+	  <?php if(fn_show_filed('backorders')){ ?>,{ data: "backorders" , type: "dropdown",  source: ["yes","notify","no"], readOnly: true}<?php } ?>
 	  <?php if(fn_show_filed('shipping_class')){ ?>,{
 	    data: "shipping_class",
 		readOnly: true,
