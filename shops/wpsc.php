@@ -477,13 +477,7 @@ if(isset($_REQUEST["do_import"])){
 						
 				   $post_update = array( 'ID' => $id );
 	  
-				   if($sku_index > 0){ 
-					  update_post_meta($id, '_wpsc_sku', $data[$sku_index]);
-				   }
-				   
-				   if($stock_index > 0){ 
-					  update_post_meta($id, '_wpsc_stock', $data[$stock_index]);
-				   }
+				  
 				   
 				   if($price_index > 0){ 
 					  update_post_meta($id, '_wpsc_price', $data[$price_index]);
@@ -492,111 +486,6 @@ if(isset($_REQUEST["do_import"])){
 				   if($price_o_index > 0){
 					  update_post_meta($id, '_wpsc_special_price', $data[$price_o_index]);
 				   }
-				   
-				   if($status_index > 0){
-					  $post_update['post_status'] = $data[$status_index];
-				   }
-				   
-				   if($name_index > 0){ 
-					  $post_update['post_title'] = $data[$name_index];  
-				   }
-				   
-				   if($slug_index > 0){ 
-					  $post_update['post_name'] = urlencode($data[$slug_index]);  
-				   }
-				   
-				   if(count($post_update) > 1){
-					  wp_update_post($post_update);;
-				   }
-				   
-				   $pr_meta = get_post_meta($id,'_wpsc_product_metadata',true);
-				   $dimensions = &$pr_meta['dimensions'];
-				   if(!$dimensions){
-					  $pr_meta['dimensions'] = array();
-					  $dimensions = &$pr_meta['dimensions'];
-				   }
-				   
-				   if($weight_index > 0){
-					   $weight = $data[$weight_index];  
-					   if($weight){
-						   $pr_meta['weight']       = floatval($weight);
-						   $pr_meta['weight_unit']  = str_replace(" ","",str_replace($pr_meta['weight'],'',$weight));
-						   $pr_meta['weight'] = fn_convert_unit($pr_meta['weight'],$pr_meta['weight_unit'],'pound');
-					   }else{
-						   $pr_meta['weight']       = '';   
-						   $pr_meta['weight_unit']  = '';
-					   }
-				   }
-				   
-				   if($height_index > 0){
-				   	   $height = $data[$height_index];  
-					   if($height){
-						   $dimensions['height']       = floatval($height);
-						   $dimensions['height_unit']  = str_replace(" ","",str_replace($dimensions['height'],'',$height));
-					   }else{
-						   $dimensions['height']       = ''; 
-						   $dimensions['height_unit']  = '';
-					   }
-				   }
-				   
-				   if($width_index > 0){
-					   $width = $data[$width_index];  
-					   if($height){
-						   $dimensions['width']        = floatval($width);
-						   $dimensions['width_unit']   = str_replace(" ","",str_replace($dimensions['width'],'',$width));
-					   }else{
-						   $dimensions['width']        = '';
-						   $dimensions['width_unit']   = '';
-					   }				   
-				   }
-				   
-				   if($length_index > 0){
-					   $length = $data[$length_index];  
-					   if($height){
-						   $dimensions['length']       = floatval($length);
-						   $dimensions['length_unit']  = str_replace(" ","",str_replace($dimensions['length'],'',$length));
-					   }else{
-						   $dimensions['length']       = '';
-						   $dimensions['length_unit']  = '';
-					   }
-				   }
-				   
-				   if($taxable_index > 0){
-				   	   $pr_meta['wpec_taxes_taxable_amount'] = $data[$taxable_index];  
-				   }
-				   
-				   if($loc_shipping_index > 0){
-					   $pr_meta['shipping']['local']         = $data[$loc_shipping_index];  
-				   }
-				   
-				   if($int_shipping_index > 0){
-				   	   $pr_meta['shipping']['international'] = $data[$int_shipping_index];  
-				   }
-				   
-				   update_post_meta($id, '_wpsc_product_metadata', $pr_meta);
-
-				   if($categories_names_index > 0){
-					  wp_set_object_terms( $id ,  explode(",",$data[$categories_names_index]) , 'wpsc_product_category' );
-				   }
-				   
-				   if($tags_names_index > 0){
-					  wp_set_object_terms( $id , explode(",",$data[$tags_names_index]) , 'product_tag' );
-				   }
-				   
-				   foreach($custom_fileds as $cfname => $cfield){ 
-						if(isset($cf_indexes[$cfname])){
-						   if($cfield->type == "term"){
-								wp_set_object_terms( $id , array_map(fn_correct_type, explode(",",$data[$cf_indexes[$cfname]])) , $cfield->source );
-						   }elseif($cfield->type == "meta"){
-								fn_set_meta_by_path( $id , $cfield->source, $data[$cf_indexes[$cfname]]);  
-						   }elseif($cfield->type == "post"){
-						        $wpdb->query( 
-									$wpdb->prepare( "UPDATE $wpdb->posts SET ".$cfield->source." = %s WHERE ID = %d", $data[$cf_indexes[$cfname]] ,$id )
-								); 
-						   }
-						}
-				   }
-
 				   
 				   $import_count ++;
 				}
