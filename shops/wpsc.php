@@ -720,12 +720,12 @@ function product_render(&$IDS, $op,&$df = null){
 	  foreach($custom_fileds as $cfname => $cfield){ 
 	   if($cfield->type == "term"){
 		if(isset($_REQUEST["do_export"]))
-			$prod->{$cfname} = implode(",",wp_get_object_terms($id,$cfield->source, 'names'));
+			$prod->{$cfname} = implode(",",wp_get_object_terms($id,$cfield->source, array('fields' => 'names')));
 		else{
 			if($prod->parent)
-				$prod->{$cfname} = wp_get_object_terms($prod->parent,$cfield->source, 'ids');
+				$prod->{$cfname} = wp_get_object_terms($prod->parent,$cfield->source, array('fields' => 'ids'));
 			else
-				$prod->{$cfname} = wp_get_object_terms($id, $cfield->source , 'ids');
+				$prod->{$cfname} = wp_get_object_terms($id, $cfield->source , array('fields' => 'ids'));
 		}	
 	   }elseif($cfield->type == "meta"){
 			$prod->{$cfname} = fn_get_meta_by_path( $id , $cfield->source);
@@ -1980,15 +1980,22 @@ jQuery(document).ready(function(){
 	  <?php if(fn_show_filed('int_shipping')){ ?>,{ data: "int_shipping", type: 'numeric',format: '0<?php echo substr($_num_sample,1,1);?>00', readOnly: true }<?php } ?>
 	  
   <?php foreach($custom_fileds as $cfname => $cfield){ 
-		 if($cfname->type == "term"){?>
+		 if($cfield->type == "term"){?>
 			,{ 
 			   data: "<?php echo $cfield->name;?>",
 			   readOnly: true,
 			   editor: CustomSelectEditor.prototype.extend(),
 			   renderer: CustomSelectRenderer,
-			   select_multiple: <?php echo $cfname->options->multiple ? "true" : "false" ?>,
-			   allow_random_input: <?php echo $cfname->options->allownew ? "true" : "false" ?>,
-			   selectOptions: <?php echo json_encode($cfname->terms);?>
+			   select_multiple: <?php echo $cfield->options->multiple ? "true" : "false" ?>,
+			   allow_random_input: <?php echo $cfield->options->allownew ? "true" : "false" ?>,
+			   selectOptions: <?php echo json_encode($cfield->terms);?>,
+				   dictionary: <?php
+                      $asoc_trm = array();
+					  foreach($cfield->terms as $t){
+						$asoc_trm[$t->value] = $t->name;
+					  } 
+					  echo json_encode($asoc_trm);
+				   ?>
 			 }
  <?php }else{ ?>
 			,{ 
@@ -2001,8 +2008,8 @@ jQuery(document).ready(function(){
 			   <?php
 			   }elseif($cfield->options->formater == "checkbox"){
 				  echo ',type: "checkbox"'; 
-				  if($cfname->options->checked_value) echo ',checkedTemplate: "'.$cfield->options->checked_value.'"'; 
-				  if($cfname->options->unchecked_value) echo ',uncheckedTemplate: "'.$cfield->options->unchecked_value.'"'; 
+				  if($cfield->options->checked_value) echo ',checkedTemplate: "'.$cfield->options->checked_value.'"'; 
+				  if($cfield->options->unchecked_value) echo ',uncheckedTemplate: "'.$cfield->options->unchecked_value.'"'; 
 			   }elseif($cfield->options->formater == "dropdown"){
 				  echo ',type: "autocomplete", strict: ' . ($cfield->options->strict ? "true" : "false");
 				  echo ',source:' ;
