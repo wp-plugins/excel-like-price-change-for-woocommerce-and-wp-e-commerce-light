@@ -258,7 +258,7 @@ function loadCustomFields(&$plem_settings,&$custom_fileds){
 				if(!$cfield->source)
 				  continue;  
 				  
-				$cfield->options = get_array_value($plem_settings,"wooccf_editoptions".$n, "");
+				$cfield->options = get_array_value($plem_settings,"wpsccf_editoptions".$n, "");
 				if($cfield->options){
 				  $cfield->options = json_decode($cfield->options);
 				}else{
