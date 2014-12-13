@@ -3,11 +3,11 @@
  * Plugin Name: Excel Like Price Change for WooCommerce and WP E-commerce - Light
  * Plugin URI: http://holest.com/index.php/holest-outsourcing/free-stuff/excel-like-price-changer-for-woocommerce-and-wp-e-commerce-light-free.html
  * Description:An WooCommerce / WP E-commerce 'MS excel'-like fast input spreadsheet editor for fast product price change using web-form spreadsheet or export / import form CSV. It supports both WooCommerce and WP E-commerce. UI behaves same as in MS Excel. This is the right thing for you if your users give you a blank stare when you're trying to explain them how to update prices.;EDITABLE / IMPORTABLE FIELDS: Price, Sales Price; VIEWABLE / EXPORTABLE FIELDS: WooCommerce: Price, Sales Price, Attributes (Each pivoted as column), SKU, Category, Shipping class, Name, Slug, Stock, Featured, Status, Weight, Height, Width, Length, Tax status, Tax class; WP E-commerce: Price, Sales Price, Tags, SKU, Category, Name, Slug, Stock, Status, Weight, Height, Width, Length, Taxable, local and international shipping costs; Allows custom fields you can configure to view/export any property
- * Version: 1.0.9
+ * Version: 1.0.8
  * Author: Holest Engineering
  * Author URI: http://www.holest.com
  * Requires at least: 3.6
- * Tested up to: 3.8.1
+ * Tested up to: 4.0.1
  * License: GPLv2
  * Tags: excel, fast, woo, woocommerce, wpsc, wp e-commerce, products, editor, spreadsheet, import, export 
  * Text Domain: excellikepricechangeforwoocommerceandwpecommercelight
