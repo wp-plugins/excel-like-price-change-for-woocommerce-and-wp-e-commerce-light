@@ -306,7 +306,7 @@ UL.menu LI > span{
 }
 
 UL.menu LI > span > *{
-  padding: 17px 16px;
+  padding: 13px 16px;
   display: block;
   text-align:left;
 }
